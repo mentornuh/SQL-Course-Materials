@@ -1,23 +1,25 @@
 # SQL-Course-Materials
-Basics
+**Basics**
 USE sql_store;
-SELECT * 
-FROM customers   WHERE state = ‘CA’  ORDER BY first_name  LIMIT 3;
+SELECT *  FROM customers   WHERE state = ‘CA’  ORDER BY first_name  LIMIT 3;
+
 • SQLisnotacase-sensitivelanguage.
 • InMySQL,everystatementmustbeterminatedwithasemicolon.
-Comments
+
+**Comments**
 We use comments to add notes to our code.
 —- This is a comment and it won’t get executed. 
-SELECT Clause
+
+**SELECT Clause**
 —- Using expressions
-SELECT (points * 10 + 20) AS discount_factor  FROM customers
-Order of operations:
+SELECT (points * 10 + 20) AS discount_factor  FROM customers Order of operations:
 • Parenthesis
 • Multiplication/division • Addition/subtraction
  
 —- Removing duplicates
 SELECT DISTINCT state  FROM customers  
- WHERE Clause
+
+ **WHERE Clause**
 We use the WHERE clause to filter data.
  
 Comparison operators:
@@ -30,31 +32,20 @@ Comparison operators:
 Logical Operators
  
 —- AND (both conditions must be True)  
-SELECT * 
-FROM customers  
-WHERE birthdate > ‘1990-01-01’ AND points > 1000  
-—- OR (at least one condition must be True)  
-SELECT * 
-FROM customers  
-WHERE birthdate > ‘1990-01-01’ OR points > 1000    
-—- NOT (to negate a condition)  
-SELECT * 
-FROM customers  
-WHERE NOT (birthdate > ‘1990-01-01’)
+SELECT *  FROM customers  WHERE birthdate > ‘1990-01-01’ AND points > 1000  —- OR (at least one condition must be True)  
+SELECT *  FROM customers  WHERE birthdate > ‘1990-01-01’ OR points > 1000    —- NOT (to negate a condition)  
+SELECT *  FROM customers  WHERE NOT (birthdate > ‘1990-01-01’)
 
- IN Operator
+ **IN Operator**
 —- Returns customers in any of these states: VA, NY, CA 
-SELECT * 
-FROM customers  
-WHERE state IN (‘VA’, ‘NY’, ‘CA’)
-BETWEEN Operator
-SELECT * 
-FROM customers  
-WHERE points BETWEEN 100 AND 200
-LIKE Operator
+SELECT *  FROM customers  WHERE state IN (‘VA’, ‘NY’, ‘CA’)
+
+**BETWEEN Operator**
+SELECT *  FROM customers  WHERE points BETWEEN 100 AND 200
+
+**LIKE Operator**
 —- Returns customers whose first name starts with b  
-SELECT * 
-FROM customers  
+SELECT *  FROM customers  
 WHERE first_name LIKE ‘b%’
 • %:anynumberofcharacters • _:exactlyonecharacter
 REGEXP Operator
